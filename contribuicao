@@ -1,0 +1,29 @@
+package br.com.dio.desafio.dominio;
+
+public class Curso extends Conteudo {
+
+  private final int cargaHoraria;  // Make cargaHoraria final for immutability
+
+  public Curso(String titulo, String descricao, int cargaHoraria) {
+    super(titulo, descricao);  // Call superclass constructor for title and description
+    this.cargaHoraria = cargaHoraria;
+  }
+
+  @Override
+  public double calcularXp() {
+    return XP_PADRAO * cargaHoraria;
+  }
+
+  public int getCargaHoraria() {
+    return cargaHoraria;
+  }
+
+  @Override
+  public String toString() {
+    return "Curso{" +
+        "titulo='" + getTitulo() + '\'' +
+        ", descricao='" + getDescricao() + '\'' +
+        ", cargaHoraria=" + cargaHoraria +
+        '}';
+  }
+}
